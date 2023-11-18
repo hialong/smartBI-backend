@@ -7,7 +7,6 @@ import com.yupi.springbootinit.common.ResultUtils;
 import com.yupi.springbootinit.exception.BusinessException;
 import com.yupi.springbootinit.exception.ThrowUtils;
 import com.yupi.springbootinit.model.dto.post.PostQueryRequest;
-import com.yupi.springbootinit.model.dto.postfavour.PostFavourAddRequest;
 import com.yupi.springbootinit.model.dto.postfavour.PostFavourQueryRequest;
 import com.yupi.springbootinit.model.entity.Post;
 import com.yupi.springbootinit.model.entity.User;
@@ -51,7 +50,7 @@ public class PostFavourController {
      * @return resultNum 收藏变化数
      */
     @PostMapping("/")
-    public BaseResponse<Integer> doPostFavour(@RequestBody PostFavourAddRequest postFavourAddRequest,
+    public BaseResponse<Integer> doPostFavour(@RequestBody com.yupi.springbootinit.model.dto.chartfavour.PostFavourAddRequest postFavourAddRequest,
             HttpServletRequest request) {
         if (postFavourAddRequest == null || postFavourAddRequest.getPostId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
